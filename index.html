@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">      
+    <script src="https://kit.fontawesome.com/b4bc2c9b2b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="fb-bg">
+            <h1 class="fb-head">facebook</h1>
+            <p class="fb-para">Facebook helps you connect and share with the people in your life.</p>
+        </div>
+        <div class="login-bg">
+            <input id="email" class="email" placeholder="Email address" type="text"/>
+            <input id="emailPass" class="email"  placeholder="Password" type="password"/>
+            <br/>            
+            <button class="login-btn">Log in</button>
+            <p class="forgot-pass">Forgotten password?</p>
+            <p class="line"></p>
+            <div style="display: flex ; justify-content:center;">
+                <button id="register">Create New Account</button>
+            </div style="display: flex ; justify-content:center;">
+            <div class="modal">
+                <div class="modal-1">
+                    <div class="head-bg">
+                        <h1>Sign Up</h1>
+                        <p class="nav-head">It's quick and easy.</p>
+                    </div>
+                    <i class="fa-solid fa-xmark close"></i>
+                </div>
+                <div class="modal-2">
+                    <content class="user-bg">
+                        <input class="user-field hell" id="firstName" placeholder="First name" type="text"/>
+                        <i class="fa-sharp fa-solid fa-circle-exclamation warns warns2" id="warning"></i>
+                        <p id="errorName"></p>                        
+                        <input class="user-field hell" id="lastName" placeholder="Surname" type="text"/>
+                        <i class="fa-solid fa-circle-exclamation last-warn last-warn2" id="last-warning"></i>
+                    </content>
+                    <div class="email-bg">
+                        <input id="text" class="email-field hell" placeholder="Email address" type="text"/>
+                        <i class="fa-solid fa-circle-exclamation email-warn em-warns2" id="email-warning"></i>
+                    </div>
+                    <div class="pass-bg">
+                        <input id="password" class="email-field hell" placeholder="New Password" type="password"/>
+                        <i class="fa-solid fa-circle-exclamation pass-warn pass-warn2" id="pass-warning"></i>
+                    </div>                    
+                    <p class="para-head">Date of birth</p>
+                    <input class="date-field hell" id="dob"  type="date"/>
+                    <i class="fa-solid fa-circle-exclamation dob-warn dob-warn2" id="dob-warning"></i>
+                    <p class="para-head">Gender</p>
+                    <div class="gender-bg">                            
+                        <div class="gender ">
+                            <p>Male</p>
+                            <input  type="radio" class="hell" name="genders"/>                                
+                        </div>
+                        <div class="gender ">
+                            <p>Female</p>
+                            <input  type="radio" class="hell" name="genders"/>                                
+                        </div>
+                        <div class="gender ">
+                            <p>Other</p>
+                            <input  type="radio" class="hell" name="genders"/>                                
+                        </div>
+                    </div>
+                    <p class="para-1">People who use our service may have uploaded your contact information to Facebook.</p>                        
+                    <p class="para-1">By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+                    <button class="sign-btn" >Sign Up</button>
+                </div>
+                </div>
+                    <h1 id="para"></h1>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

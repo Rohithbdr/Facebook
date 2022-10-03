@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    position: relative;
+}
+
+#para {
+    position: absolute;
+    bottom: 50px;
+}
+
+.email {
+    padding-inline: 1rem;
+    padding-block: .8rem;
+    border-radius: 5px;
+    margin-top: .8rem;
+    border: 1px solid #dddfe2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.fb-bg {
+    max-width: 550px;
+}
+
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    background: #f0f2f5; 
+    padding-inline: 5rem;  
+}
+
+.fb-head {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 65px;
+    color: #1877f2;
+    letter-spacing: -2px;
+}
+
+.fb-para{
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: .8rem;
+}
+
+.login-bg {
+    width: 370px;
+    padding: 1rem;
+    position: relative;
+    right: 50px;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 10px;    
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.head {
+    position: absolute;
+    top: 0;
+}
+
+.btn {
+    margin-top: 1rem;
+    padding-inline: 1rem;
+    padding-block: .6rem;
+    font-weight: 700;
+}
+
+.login-btn {
+    padding-inline: 1rem;
+    padding-block: .8rem;
+    font-weight: 700;
+    border-radius: 5px;
+    border-style: none;
+    background: #1877f2;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.forgot-pass {
+    text-align: center;
+    color: #1877f2;
+    margin-block: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.forgot-pass:hover {
+    text-decoration: underline;
+}
+
+.line {
+    border-bottom: 1px solid #dddfe2;
+}
+
+#register {
+    background: #42b72a;
+    padding-block: 0.8rem;
+    color: #ffffff;
+    border-style: none;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 53%;
+    margin-top: 1.2rem;
+    cursor: pointer;
+}
+
+.close {
+    font-size: 28px;
+    margin-top: 0.6rem;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    top: -25%;
+    right: 70%;
+    border-radius: 8px;
+    height: 560px;
+    width: 450px;
+    background: #ffffff;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.modal-1 {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    padding-block: .6rem;
+    border-bottom: 1px solid grey;
+}
+
+.head-bg {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400
+}
+
+.nav-head {
+    font-size: 15px;
+    color: #777777;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-2 {
+    margin: .5rem;
+    padding: 8px;
+}
+
+.user-bg {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+#errorName {
+    color: #b94a48;
+    position: absolute;
+    bottom: -18px;
+    padding: 0.2rem;
+    font-size: 12px;
+    letter-spacing: 1px;
+    left: 5px;
+}
+
+#firstName {
+    position: relative;
+}
+
+.warns {
+    display: none !important;
+}
+
+.warns2 {
+    color: #b94a48;
+    position: absolute;
+    left: 43%;
+    top: 31%;
+    display: block;
+}
+
+.last-warn {
+    display: none !important;
+}
+
+.last-warn2 {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    color: #b94a48;
+}
+
+.email-bg {
+    position: relative;
+}
+
+.email-warn {
+    display: none !important;
+}
+
+.em-warns2 {
+    position: absolute;
+    right: 10px;
+    top: 33px;
+    color: #b94a48;
+    display: block;
+}
+
+.pass-bg {
+    position: relative;
+}
+
+.pass-warn {
+    display: none !important;
+}
+
+.pass-warn2 {
+    position: absolute;
+    color: #b94a48;
+    top: 33px;
+    right: 8px;
+    display: block;
+}
+
+.dob-warn{
+    display: none !important;    
+}
+
+.dob-warn2 {
+    color: #b94a48;
+    display: block;
+}
+
+
+.user-field {
+    padding-inline: .4rem;
+    padding-block: 0.7rem;
+    border-radius: 5px;
+    border: 1px solid #dddfe2;
+    border-width: 1px;
+    background: #f5f6f7;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.email-field {
+    width: 92%;
+    padding-block: 0.7rem;
+    margin-top: 1.3rem;
+    padding-inline: 1rem;
+    border: 1px solid #dddfe2;
+    border-width: 1px;
+    background: #f5f6f7;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.para-head {
+    margin-top: .7rem;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.date-field {
+    height: 35px;
+    width: 200px;
+    text-align: center;
+    margin-top: .1rem;
+    border: 1px solid #dddfe2;
+    border-width: 1px;
+    background: #f5f6f7;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.gender-bg {
+    display: flex;
+    justify-content: space-between;
+    margin-top: .1rem;
+}
+
+.gender {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    border: 1px solid grey;
+    padding-inline: 1rem;
+    padding-block: 0.6rem;
+    border: 1px solid #dddfe2;
+    border-width: 1px;
+    background: #f5f6f7;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.para-1 {
+    font-size: 11px;
+    margin-top: .7rem;
+    line-height: 14px;
+    color: #777;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.sign-btn {
+    position: absolute;
+    bottom: 28px;
+    left: 27.8%;
+    padding-inline: 3.8rem;
+    padding-block: 0.3rem;
+    border-radius: 8px;
+    border-style: none;
+    background: #00a400;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
