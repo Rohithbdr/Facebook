@@ -175,15 +175,10 @@ show.onclick=function() {
 
 save.onclick = function() {
     if(userName.value && pass.value && firstName.value && lastName.value !== "") {
-        username.push(userName.value);
-        password.push(pass.value);
-
         let userObject  =  createObject();
         userArray.push(userObject);  
-
         saved();  
         modal.style.display = "none";
-
     }   
 
 
@@ -235,8 +230,6 @@ logout.onclick = function() {
 document.getElementById('main-2').style.display = "none";
 
 function saved() {
-    localStorage.setItem("usernames" ,JSON.stringify(username));
-    localStorage.setItem("passwords" , JSON.stringify(password));
     localStorage.setItem("users" , JSON.stringify(userArray));
     userName.value = "";
     pass.value = "";
