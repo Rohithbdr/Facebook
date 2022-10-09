@@ -19,24 +19,51 @@ let emWarn = document.getElementById("email-warning");
 let passWarn = document.getElementById("pass-warning");
 let dob = document.getElementById("dob");
 let dobWarn = document.getElementById("dob-warning");
+let genderbtn = document.querySelectorAll('.gender');
+let birthdays = document.querySelectorAll('.birthday');
+
+
+let logedFirst = document.getElementById("loged-name");
+let logedLast = document.getElementById("loged-Lname");
+let profIcon = document.getElementById("profile-icon");
+let renderedBg = document.getElementById('render-bg');
+let logout = document.getElementById("logout");
 
 
 
 
-let username = [];
-let password = [];
+let userArray = [];
+
+let genders;
+let birthdate;
+
+birthdays.forEach((event) => {
+    let activeTag = event;
+    activeTag.onclick = (tag) => {
+        if(tag.target.value !== "") {
+        console.log(tag.target.value)        
+        }
+    }
+})
+
+genderbtn.forEach((event) => {
+    let presentTAg = event;
+    presentTAg.onclick = (tag) => {
+         genders = tag.target.value;
+    }
+})
+
 
 
 firstName.addEventListener("blur" , (event) => {
     if(event.target.value === ""){
         firstName.style.borderColor = "red";
         warn.classList.remove("warns");
-    } else {
+    }   else {
         firstName.style.borderColor = "#dddfe2";
         warn.classList.add("warns");
     }
 });
-
 
 
 
@@ -46,7 +73,7 @@ lastName.addEventListener("blur" , (event) => {
         lastWarn.classList.remove("last-warn");
     } else {
         lastName.style.borderColor = "#dddfe2";
-        lastWarn.classList.add("last-warn")
+        lastWarn.classList.add("last-warn");
     }
 });
 
@@ -70,7 +97,7 @@ pass.addEventListener("blur", (event) => {
     }
 });
 
-dob.addEventListener("blur" , (event) => {
+dob.addEventListener("change" , (event) => {
     if(event.target.value === "") {
         dob.style.borderColor = "red";
         dobWarn.classList.remove("dob-warn");
@@ -82,9 +109,10 @@ dob.addEventListener("blur" , (event) => {
 
 inputs.forEach(function(element) {
     let activeInputs = element;
-    activeInputs.onfocus = (btn) => {
+    activeInputs.onfocus = () => {
         if(firstName.value === "") {
-            firstName.style.borderColor = "red";          
+            firstName.style.borderColor = "red";
+            // warn.classList.remove("warns");         
         } else {
             firstName.style.borderColor = "#dddfe2";        
         }
@@ -94,6 +122,19 @@ inputs.forEach(function(element) {
 
 register.onclick = () => {
     modal.style.display = "block";
+
+    if(firstName.value === "") {
+        firstName.style.borderColor = "#dddfe2";
+        warn.classList.add("warns");
+        lastName.style.borderColor = "#dddfe2";
+        lastWarn.classList.add("last-warn");
+        text.style.borderColor = "#dddfe2";
+        emWarn.classList.add("email-warn");
+        pass.style.borderColor = "#dddfe2";
+        passWarn.classList.add("pass-warn");
+        dob.style.borderColor = "#dddfe2";
+        dobWarn.classList.add("dob-warn");
+    }
 }
 
 
@@ -105,45 +146,98 @@ close.onclick = function() {
     lastName.value = "";  
 }
 
+ function createObject() {
+   return {
+        id: userArray.length + 1,
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: text.value,
+        password: pass.value,
+        // birthday: dob.value,
+        gender:   genders
+    }
+}
+
+
+
+
+let show = document.getElementById("console");
+
+show.onclick=function() {
+    console.log(userArray)
+} 
+
+
+
+
+
+
+
 save.onclick = function() {
     if(userName.value && pass.value && firstName.value && lastName.value !== "") {
         username.push(userName.value);
-        password.push(pass.value)
+        password.push(pass.value);
+
+        let userObject  =  createObject();
+        userArray.push(userObject);  
+
         saved();  
-        modal.style.display = "none";      
+        modal.style.display = "none";
+
     }   
+
 
     if(firstName.value  === "") {
         firstName.style.borderColor = "red";
         warn.classList.remove("warns");
+    } if(lastName.value === "") {
         lastName.style.borderColor = "red";
         lastWarn.classList.remove("last-warn");
+    } if(text.value === "") {
         text.style.borderColor = "red";
         emWarn.classList.remove("email-warn");
+    } if(pass.value === "") {
         pass.style.borderColor = "red";
         passWarn.classList.remove("pass-warn");
         dob.style.borderColor = "red";
         dobWarn.classList.remove("dob-warn");
     } 
-    
+       
 }
 
 logined.onclick = function () {
-    let storedUsername = localStorage.getItem("usernames");
-    let parsedUser = JSON.parse(storedUsername);
-    let parsedPass = JSON.parse(localStorage.getItem("passwords"));
-    let filteredUser = parsedUser.filter((each) => each.includes(userInput.value));
-    let filteredPass = parsedPass.filter((each) => each.includes(userPass.value));
-    if((userInput.value === filteredUser[0]) && (userPass.value === filteredPass[0])){
-        alert("Login Succesful")
+    let parsedUserArray = JSON.parse(localStorage.getItem("users"));
+    let filteredUser = parsedUserArray.filter((each) => each.email.includes(userInput.value));
+    let filteredPass = parsedUserArray.filter((each) => each.password.includes(userPass.value));
+    if((userInput.value === filteredUser[0].email) && (userPass.value === filteredPass[0].password)){
+        logedFirst.textContent = filteredUser[0].firstName + " " + filteredUser[0].lastName;
+        alert("Login Succesful");
+        // window.location ="https://rohith-bdr.netlify.app/";
+        document.getElementById("main").style.display = "none";
+        document.getElementById('main-2').style.display = "block";
     } else {
         alert("UserName or Password is incorrect");
     }
 }
 
+profIcon.onclick = () => {
+  renderedBg.classList.toggle("showUsers");
+}
+
+logout.onclick = function() {
+    document.getElementById('main-2').style.display = "none";
+    document.getElementById("main").style.display = "flex";
+    renderedBg.classList.remove("showUsers");
+    alert("You have successfully been logged out");
+}
+
+
+document.getElementById('main-2').style.display = "none";
+
 function saved() {
     localStorage.setItem("usernames" ,JSON.stringify(username));
     localStorage.setItem("passwords" , JSON.stringify(password));
+    localStorage.setItem("users" , JSON.stringify(userArray));
     userName.value = "";
     pass.value = "";
     firstName.value = "";
