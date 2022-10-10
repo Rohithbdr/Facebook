@@ -161,15 +161,6 @@ close.onclick = function() {
 
 
 
-let show = document.getElementById("console");
-
-show.onclick=function() {
-    console.log(userArray)
-} 
-
-
-
-
 
 
 
