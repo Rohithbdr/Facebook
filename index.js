@@ -20,7 +20,7 @@ let passWarn = document.getElementById("pass-warning");
 let dob = document.getElementById("dob");
 let dobWarn = document.getElementById("dob-warning");
 let genderbtn = document.querySelectorAll('.gender');
-let birthdays = document.querySelectorAll('.birthday');
+
 
 
 let logedFirst = document.getElementById("loged-name");
@@ -29,7 +29,10 @@ let profIcon = document.getElementById("profile-icon");
 let renderedBg = document.getElementById('render-bg');
 let logout = document.getElementById("logout");
 
-
+let bDate = document.getElementById("day");
+let bMonth = document.getElementById("month");
+let bYear = document.getElementById("year");
+let birthdays = document.querySelectorAll('.birthday');
 
 
 let userArray = [];
@@ -37,19 +40,14 @@ let userArray = [];
 let genders;
 let birthdate;
 
-birthdays.forEach((event) => {
-    let activeTag = event;
-    activeTag.onclick = (tag) => {
-        if(tag.target.value !== "") {
-        console.log(tag.target.value)        
-        }
-    }
-})
 
 genderbtn.forEach((event) => {
     let presentTAg = event;
     presentTAg.onclick = (tag) => {
          genders = tag.target.value;
+         if(bYear.value !== "") {
+         birthdate = bDate.value + "/" + bMonth.value + "/" +bYear.value ;
+         }
     }
 })
 
@@ -153,10 +151,13 @@ close.onclick = function() {
         lastName: lastName.value,
         email: text.value,
         password: pass.value,
-        // birthday: dob.value,
+        birthday: birthdate,
         gender:   genders
     }
 }
+
+
+
 
 
 
